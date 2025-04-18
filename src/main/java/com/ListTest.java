@@ -13,18 +13,10 @@ import java.util.Map;
  */
 public class ListTest {
     public static void main(String[] args) {
-        HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("1","1");
-        HashMap<String, String> hashMap1 = new HashMap<>();
-        hashMap1.put("2","2");
-        ArrayList<Map<String, String>> maps = new ArrayList<>();
-        maps.add(hashMap);
-        maps.add(hashMap1);
-        for (Map<String, String> map : maps) {
-            map.put("3","3");
+        List<Map<String,String>> list = new ArrayList<>();
+        for (Map<String, String> map : list) {
+            System.out.println(map);
         }
-        System.out.println(maps);
-
     }
 
 }

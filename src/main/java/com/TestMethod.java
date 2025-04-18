@@ -1,5 +1,6 @@
 package com;
 
+import com.sh.ideal.utils.GMUtil;
 import org.springframework.util.StringUtils;
 import java.util.regex.*;
 import java.text.DateFormat;
@@ -17,43 +18,10 @@ public class TestMethod {
      * @param args
     */
     public static void main(String[] args) {
-//        Map<String,String> param= new HashMap<>();
-//        new TestMethod().test2(param);
-//        System.out.println(param);
-//        String a  =  "  ";
-//        boolean empty = StringUtils.isEmpty(a);
-//        System.out.println(empty);
-//        ArrayList<HashMap<String, String>> hashMaps = new ArrayList<>();
-//        HashMap<String, String> hashMap = new HashMap<>();
-//        String put = hashMap.put("123", "456");
-//        System.out.println(put);
-//        boolean add = hashMaps.add(hashMap);
-//        String put1 = hashMaps.get(0).put("123", "789");
-//        System.out.println(put1);
-//        LocalDate currentDate = LocalDate.now();
-//        int year = currentDate.getYear();
-//        int month = currentDate.getMonthValue();
-//        int day = currentDate.getDayOfMonth();
-//
-//        LocalDate previousMonth = currentDate.minusMonths(1);
-//        int prevYear = previousMonth.getYear();
-//        int prevMonth = previousMonth.getMonthValue();
-//        int prevDay = previousMonth.getDayOfMonth();
-//
-//        String daymonth = String.format("%d%02d", prevYear, prevMonth);
-//        System.out.println("Previous month format: " + daymonth);
 
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS a");
-//        dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-//        String formattedDate = dateFormat.format(new Date());
-//        System.out.println(formattedDate);
-        String resx = "[\\u4e00-\\u9fa5]+";
-        Pattern compile = Pattern.compile(resx);
-        String test = "你好123";
-        Matcher matcher = compile.matcher(test);
-        boolean matches = matcher.matches();
-        System.out.println(matches);
-
-
+        String s = GMUtil.SM2Encrypt("1234567890,hello", "04d0df09b9bddc8ecd8052dc033397b2b363af32e41076afe9d09d16da1e9a3f6e3e7fe6febcd6e4ab1c8586c831789270f8a4dea7a56f4d73de0a438e4de6991f");
+        System.out.println(s);
+        String s1 = GMUtil.SM2Decrypt("045AB6E32EF73085FA7A52934B0F94B9B4261867FA31599569B1D2F1534E4A192DDA8D0981D68DDC8B19FFE6F9205721F0FCB37EAF3F97F9A2AA6C3FB92FF260D0DC9336C700C3D6106150628FFCB34A9E94AE165856AE6D767851F7D565D711ACF8216784BE3A48D286CB126210E08DE6", "04d0df09b9bddc8ecd8052dc033397b2b363af32e41076afe9d09d16da1e9a3f6e3e7fe6febcd6e4ab1c8586c831789270f8a4dea7a56f4d73de0a438e4de6991f");
+        System.out.println(s1);
     }
 }
